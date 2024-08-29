@@ -118,15 +118,15 @@ var configValue;
 try {
   global.client.configPath = join(global.client.mainPath, "../../Mahabub.json");
   configValue = require(global.client.configPath);
-  logger.loader(`deploying ${chalk.blueBright('MAHABUB')} file`);
+  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 ${chalk.blueBright('MAHABUB')} 𝐟𝐢𝐥𝐞`);
 } catch (e) {
-  return logger.loader(`cant read ${chalk.blueBright('MAHABUB')} file`, "error");
+  return logger.loader(`⚠️𝐜𝐚𝐧'𝐭 𝐫𝐞𝐚𝐝 ${chalk.blueBright('MAHABUB')} 𝐟𝐢𝐥𝐞`, "𝐞𝐫𝐫𝐨𝐫");
 }
 try {
   for (const key in configValue) global.config[key] = configValue[key];
-  logger.loader(`deployed ${chalk.blueBright('MAHABUB')} file`);
+  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝 ${chalk.blueBright('MAHABUB')} 𝐟𝐢𝐥𝐞`);
 } catch (e) {
-  return logger.loader(`can't deploy ${chalk.blueBright('MAHABUB')} file`, "error")
+  return logger.loader(`⚠️𝐜𝐚𝐧'𝐭 𝐝𝐞𝐩𝐥𝐨𝐲 ${chalk.blueBright('MAHABUB')} 𝐟𝐢𝐥𝐞`, "error")
 }
 
 var approvedListsValue;
@@ -134,7 +134,7 @@ try {
   global.client.approvedListsPath = join(global.client.mainPath, "../botdata/approvedlists.json");
   approvedListsValue = require(global.client.approvedListsPath);
   if (config.approval) {
-  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 ${chalk.blueBright(``)}`);
+  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 ${chalk.blueBright(`𝐚𝐩𝐩𝐫𝐨𝐯𝐞𝐝 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞`)}`);
   } else {
     logger(`${chalk.blueBright(`⚠️𝐚𝐩𝐩𝐫𝐨𝐯𝐚𝐥`)} 𝐬𝐲𝐬𝐭𝐞𝐦 𝐢𝐬 𝐭𝐮𝐫𝐧𝐞𝐝 𝐨𝐟𝐟`, '𝐰𝐚𝐫𝐧');
   }
@@ -272,26 +272,26 @@ function onBot({ models: botModel }) {
 
             if (!config?.category) {
               try {
-                throw new Error(` • HEY CYBER •  ${command} category is not in the correct format or empty`);
+                throw new Error(` • 𝐇𝐀𝐘 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 •  ${command} 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐲 𝐢𝐬 𝐧𝐨𝐭 𝐢𝐧 𝐭𝐡𝐞 𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐟𝐨𝐫𝐦𝐚𝐭 𝐨𝐫 𝐞𝐦𝐩𝐭𝐲⚠️`);
               } catch (error) {
                 console.log(chalk.red(error.message));
                 continue;
               }
             }
-            const configures = require(`../../Cyber.json`);
+            const configures = require(`../../Mahabub.json`);
             if (configures.premium) {
               if (!config?.hasOwnProperty('premium')) {
-                console.log(`• HEY CYBER • `, chalk.hex("#ff0000")(command) + ` does not have the "premium" property.`);
+                console.log(`• 𝐇𝐀𝐘 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 • `, chalk.hex("#ff0000")(command) + ` 𝐝𝐨𝐞𝐬 𝐧𝐨𝐭 𝐡𝐚𝐯𝐞 𝐭𝐡𝐞 "𝐩𝐫𝐞𝐦𝐢𝐮𝐦" 𝐩𝐫𝐨𝐩𝐞𝐫𝐭𝐲.⚠️`);
                 continue;
               }
             }
             if (!config?.hasOwnProperty('prefix')) {
-              console.log(`• HEY CYBER • `, chalk.hex("#ff0000")(command) + ` does not have the "prefix" property.`);
+              console.log(`• 𝐇𝐀𝐘 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 • `, chalk.hex("#ff0000")(command) + ` 𝐝𝐨𝐞𝐬 𝐧𝐨𝐭 𝐡𝐚𝐯𝐞 𝐭𝐡𝐞 𝐭𝐡𝐞 "𝐩𝐫𝐞𝐟𝐢𝐱" 𝐩𝐫𝐨𝐩𝐞𝐫𝐭𝐲.⚠️`);
               continue;
             }
 
             if (global.client.commands.has(config.name || '')) {
-              console.log(chalk.red(`• HEY CYBER •  ${chalk.hex("#FFFF00")(command)} module is already deployed.`));
+              console.log(chalk.red(`• 𝐇𝐀𝐘 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 •  ${chalk.hex("#FFFF00")(command)} 𝐦𝐨𝐝𝐮𝐥𝐞 𝐢𝐬 𝐚𝐥𝐫𝐚𝐝𝐲 𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝.`));
               continue;
             }
             const { dependencies, envConfig } = config;
@@ -342,14 +342,14 @@ function onBot({ models: botModel }) {
             if (module.handleEvent) global.client.eventRegistered.push(config.name);
             global.client.commands.set(config.name, module);
             try {
-              global.loading(`${crayon(``)}successfully deployed ${chalk.blueBright(config.name)}`, `${cnslEvent.logger.strings.cmdLoader}`);
+              global.loading(`${crayon(``)}𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝 ${chalk.blueBright(config.name)}`, `${cnslEvent.logger.strings.cmdLoader}`);
             } catch (err) {
-              console.error("an error occurred while deploying the command : ", err);
+              console.error("𝐚𝐧 𝐞𝐫𝐫𝐨𝐫 𝐨𝐜𝐜𝐮𝐫𝐫𝐞𝐝 𝐰𝐡𝐢𝐥𝐞 𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 𝐭𝐡𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : ", err);
             }
 
             console.err
           } catch (error) {
-            global.loading.err(`${chalk.hex('#ff7100')(``)}failed to deploy ${chalk.hex("#FFFF00")(command)} ` + error + '\n', "command");
+            global.loading.err(`${chalk.hex('#ff7100')(``)}𝐟𝐚𝐢𝐥𝐝 𝐭𝐨 𝐝𝐞𝐩𝐥𝐨𝐲 ${chalk.hex("#FFFF00")(command)} ` + error + '\n', "command");
           }
         }
       })(),
@@ -362,20 +362,20 @@ function onBot({ models: botModel }) {
             const event = require(join(global.client.mainPath, '../../scripts/events', ev));
             const { config, onLoad, run } = event;
             if (!config || !config.name || !run) {
-              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} module is not in the correct format. `, "• CYBER EVENT •");
+              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} 𝐦𝐨𝐝𝐮𝐥𝐞 𝐢𝐬 𝐧𝐨𝐭 𝐢𝐧 𝐭𝐡𝐞 𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐟𝐨𝐫𝐦𝐚𝐭. `, "• 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 𝐄𝐕𝐄𝐍𝐓 •");
               continue;
             }
 
 
             if (errorMessages.length > 0) {
-              console.log("commands with errors :");
+              console.log("𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐰𝐢𝐭𝐡 𝐞𝐫𝐫𝐨𝐫𝐬 :");
               errorMessages.forEach(({ command, error }) => {
                 console.log(`${command}: ${error}`);
               });
             }
 
             if (global.client.events.has(config.name)) {
-              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} module is already deployed.`, "• CYBER EVENT •");
+              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} 𝐦𝐨𝐝𝐮𝐥𝐞 𝐢𝐬 𝐚𝐥𝐫𝐚𝐝𝐲 𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝.`, "• 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 𝐄𝐕𝐄𝐍𝐓 •");
               continue;
             }
             if (config.dependencies) {
@@ -408,19 +408,19 @@ function onBot({ models: botModel }) {
               await onLoad(eventData);
             }
             global.client.events.set(config.name, event);
-            global.loading(`${crayon(``)}successfully deployed ${chalk.blueBright(config.name)}`, "• CYBER EVENT •");
+            global.loading(`${crayon(``)}𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝 ${chalk.blueBright(config.name)}`, "• 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 𝐄𝐕𝐄𝐍𝐓 •");
           }
           catch (err) {
-            global.loading.err(`${chalk.hex("#ff0000")('')}${chalk.blueBright(ev)} failed with error : ${err.message}` + `\n`, "event");
+            global.loading.err(`${chalk.hex("#ff0000")('')}${chalk.blueBright(ev)} 𝐟𝐚𝐢𝐥𝐝 𝐰𝐢𝐭𝐡 𝐞𝐫𝐫𝐨𝐫 : ${err.message}` + `\n`, "event");
           }
 
 
 
         }
       })();
-    console.log(chalk.blue(`\n` + `• ISLAMICK CYBER CHAT BOT DATA •`));
-    global.loading(`${crayon(``)}deployed ${chalk.blueBright(`${global.client.commands.size}`)} commands and ${chalk.blueBright(`${global.client.events.size}`)} events`, "• CYBER DATA •");
-    global.loading(`${crayon(``)}deployed time : ${chalk.blueBright(((Date.now() - global.client.timeStart) / 1000).toFixed() + 's')}`, "• CYBER DATA •");
+    console.log(chalk.blue(`\n` + `• 𝐌𝐀𝐇𝐀𝐁𝐔𝐁_𝐁𝐎𝐓 𝐃𝐀𝐓𝐀 •`));
+    global.loading(`${crayon(``)}deployed ${chalk.blueBright(`${global.client.commands.size}`)} commands and ${chalk.blueBright(`${global.client.events.size}`)} events`, "• 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 𝐃𝐀𝐓𝐀 •");
+    global.loading(`${crayon(``)}𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝 𝐭𝐢𝐦𝐞 : ${chalk.blueBright(((Date.now() - global.client.timeStart) / 1000).toFixed() + 's')}`, "• 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 𝐃𝐀𝐓𝐀 •");
     const listenerData = {};
     listenerData.api = loginApiData;
     listenerData.models = botModel;
@@ -444,10 +444,10 @@ function onBot({ models: botModel }) {
     authentication.Sequelize = Sequelize;
     authentication.sequelize = sequelize;
     const models = require('../system/database/model.js')(authentication);
-    logger(`deployed ${chalk.blueBright('database')} system`, "• CYBER DATABASE   •");
-    logger(`deploying ${chalk.blueBright('login')} system`, "• CYBER LOGIN 	    •")
+    logger(`deployed ${chalk.blueBright('database')} system`, "• 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄   •");
+    logger(`𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 ${chalk.blueBright('login')} 𝐬𝐲𝐬𝐭𝐞𝐦`, "• 𝐌𝐀𝐇𝐀𝐁𝐔𝐁 𝐋𝐎𝐆𝐈𝐍 	    •")
     const botData = {};
     botData.models = models;
     onBot(botData);
-  } catch (error) { logger(`can't deploy ${chalk.blueBright('database')} system`, "•CYBER FAILED    •") }
+  } catch (error) { logger(`⚠️𝐜𝐚𝐧'𝐭 𝐝𝐞𝐩𝐥𝐨𝐲 ${chalk.blueBright('database')} 𝐬𝐲𝐬𝐭𝐞𝐦`, "•𝐌𝐀𝐇𝐀𝐁𝐔𝐁 𝐅𝐀𝐈𝐋𝐃    •") }
 })();
