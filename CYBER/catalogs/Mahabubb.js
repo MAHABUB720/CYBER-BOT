@@ -2,14 +2,14 @@ const { readdirSync, readFileSync, writeFileSync } = require("fs-extra");
 const { join, resolve } = require('path')
 const { execSync } = require('child_process');
 const axios = require('axios')
-const config = require("../../Cyber.json");
+const config = require("../../Mahabub.json");
 const chalk = require("chalk");
 const listPackage = JSON.parse(readFileSync('../../package.json')).dependencies;
 const packages = JSON.parse(readFileSync('../../package.json'));
 const fs = require("fs");
 const login = require('../system/login/index.js');
 const moment = require("moment-timezone");
-const logger = require("./cyberc.js");
+const logger = require("./Mahabubc.js");
 const gradient = require("gradient-string");
 const process = require("process");
 const listbuiltinModules = require("module").builtinModules;
@@ -65,8 +65,8 @@ global.data = new Object({
   allCurrenciesID: new Array(),
   allThreadID: new Array(),
 });
-global.utils = require("./cyberd.js");
-global.loading = require("./cyberc.js");
+global.utils = require("./Mahabubd.js");
+global.loading = require("./Mahabubc.js");
 global.nodemodule = new Object();
 global.config = new Object();
 global.ryuko = new Object();
@@ -104,7 +104,7 @@ try {
 }
 var ryukoValue;
 try {
-  global.client.ryukoPath = join(global.client.mainPath, "../configs/Cyber.json");
+  global.client.ryukoPath = join(global.client.mainPath, "../configs/Mahabub.json");
   ryukoValue = require(global.client.ryukoPath);
 } catch (e) {
   return;
@@ -116,17 +116,17 @@ try {
 }
 var configValue;
 try {
-  global.client.configPath = join(global.client.mainPath, "../../Cyber.json");
+  global.client.configPath = join(global.client.mainPath, "../../Mahabub.json");
   configValue = require(global.client.configPath);
-  logger.loader(`deploying ${chalk.blueBright('CYBER')} file`);
+  logger.loader(`deploying ${chalk.blueBright('MAHABUB')} file`);
 } catch (e) {
-  return logger.loader(`cant read ${chalk.blueBright('CYBER')} file`, "error");
+  return logger.loader(`cant read ${chalk.blueBright('MAHABUB')} file`, "error");
 }
 try {
   for (const key in configValue) global.config[key] = configValue[key];
-  logger.loader(`deployed ${chalk.blueBright('CYBER')} file`);
+  logger.loader(`deployed ${chalk.blueBright('MAHABUB')} file`);
 } catch (e) {
-  return logger.loader(`can't deploy ${chalk.blueBright('CYBER')} file`, "error")
+  return logger.loader(`can't deploy ${chalk.blueBright('MAHABUB')} file`, "error")
 }
 
 var approvedListsValue;
@@ -134,20 +134,20 @@ try {
   global.client.approvedListsPath = join(global.client.mainPath, "../botdata/approvedlists.json");
   approvedListsValue = require(global.client.approvedListsPath);
   if (config.approval) {
-  logger.loader(`deploying ${chalk.blueBright(`approved database`)}`);
+  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 ${chalk.blueBright(``)}`);
   } else {
-    logger(`${chalk.blueBright(`approval`)} system is turned off`, 'warn');
+    logger(`${chalk.blueBright(`⚠️𝐚𝐩𝐩𝐫𝐨𝐯𝐚𝐥`)} 𝐬𝐲𝐬𝐭𝐞𝐦 𝐢𝐬 𝐭𝐮𝐫𝐧𝐞𝐝 𝐨𝐟𝐟`, '𝐰𝐚𝐫𝐧');
   }
 } catch (e) {
-  return logger(`can't read approved database`, 'error');
+  return logger(`⚠️𝐜𝐚𝐧'𝐭 𝐫𝐞𝐚𝐝 𝐚𝐩𝐩𝐫𝐨𝐯𝐞𝐝 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞`, '𝐞𝐫𝐫𝐨𝐫');
 }
 try {
   for (const approvedListsKeys in approvedListsValue) global.approved[approvedListsKeys] = approvedListsValue[approvedListsKeys];
   if (config.approval) {
-    logger.loader(`deployed ${chalk.blueBright(`approved database`)}`)
+    logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 ${chalk.blueBright(`𝐚𝐩𝐩𝐫𝐨𝐯𝐞𝐝 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞`)}`)
   }
 } catch (e) {
-  return logger(`can't deploy approved groups database`, 'error')
+  return logger(`⚠️𝐜𝐚𝐧'𝐭 𝐝𝐞𝐩𝐥𝐨𝐲 𝐚𝐩𝐩𝐫𝐨𝐯𝐞𝐝 𝐠𝐫𝐨𝐮𝐩𝐬 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞`, '𝐞𝐫𝐫𝐨𝐫')
 }
 
 var premiumListsValue;
@@ -155,20 +155,20 @@ try {
   global.client.premiumListsPath = join(global.client.mainPath, "../botdata/premiumlists.json");
   premiumListsValue = require(global.client.premiumListsPath);
   if (config.premium) {
-  logger.loader(`deploying ${chalk.blueBright(`premium database`)}`);
+  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 ${chalk.blueBright(`𝐩𝐫𝐞𝐦𝐢𝐮𝐦 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞`)}`);
   } else {
-    logger(`${chalk.blueBright(`premium`)} system is turned off`, 'warn');
+    logger(`${chalk.blueBright(`𝐩𝐫𝐞𝐦𝐢𝐮𝐦`)} 𝐬𝐲𝐬𝐭𝐞𝐦 𝐰𝐚𝐬 𝐭𝐮𝐫𝐧𝐞𝐝 𝐨𝐟𝐟`, '𝐰𝐚𝐫𝐧');
   }
 } catch (e) {
-  return logger(`can't read premium database`, 'error')
+  return logger(`⚠️𝐜𝐚𝐧'𝐭 𝐫𝐞𝐚𝐝 𝐩𝐫𝐞𝐦𝐢𝐮𝐦 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞`, '𝐞𝐫𝐫𝐨𝐫')
 }
 try {
   for (const premiumLists in premiumListsValue) global.premium[premiumLists] = premiumListsValue[premiumLists];
   if (config.premium) {
-    logger.loader(`deployed ${chalk.blueBright(`premium database`)}`);
+    logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝 ${chalk.blueBright(`𝐩𝐫𝐞𝐦𝐢𝐮𝐦 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞`)}`);
   }
 } catch (e) {
-  return logger(`can't deploy premium database`, 'error');
+  return logger(`⚠️𝐜𝐚𝐧𝐭'𝐭 𝐝𝐞𝐩𝐥𝐨𝐲 𝐩𝐫𝐞𝐦𝐢𝐮𝐦 𝐝𝐚𝐭𝐚𝐛𝐚𝐬𝐞`, '𝐞𝐫𝐫𝐨𝐫');
 }
 
 
@@ -210,22 +210,22 @@ global.getText = function(...args) {
 
 try {
   if (!global.config.BOTNAME) {
-    logger.error(`please enter your bot name in ${chalk.blueBright('Cyber.json')} file`);
+    logger.error(`⚠️𝐩𝐥𝐞𝐚𝐬𝐞 𝐞𝐧𝐭𝐞𝐫 𝐲𝐨𝐮𝐫 𝐛𝐨𝐭 𝐧𝐚𝐦𝐞 𝐢𝐧 ${chalk.blueBright('Mahabub.json')} 𝐟𝐢𝐥𝐞`);
     process.exit(0);
   }
   if (!global.config.PREFIX) {
-    logger.error(`please enter your bot prefix in ${chalk.blueBright('Cyber.json')} file`)
+    logger.error(`⚠️𝐩𝐥𝐞𝐚𝐬𝐞 𝐞𝐧𝐭𝐞𝐫 𝐲𝐨𝐮𝐫 𝐛𝐨𝐭 𝐩𝐫𝐞𝐟𝐢𝐱 𝐢𝐧 ${chalk.blueBright('Mahabub.json')} 𝐟𝐢𝐥𝐞`)
   }
-  if (global.config.author != "CYBER") {
-    logger.error(`detected : author was changed at ${chalk.blueBright('Cyber.json')}`);
+  if (global.config.author != "𝐌𝐚𝐡𝐚𝐛𝐮𝐛 𝐑𝐚𝐡𝐦𝐚𝐧") {
+    logger.error(`⚠️ 𝐃𝐞𝐭𝐞𝐜𝐭𝐞𝐝 : 𝐚𝐮𝐭𝐡𝐨𝐫 𝐧𝐚𝐦𝐞 𝐰𝐚𝐬 𝐜𝐡𝐚𝐧𝐠𝐞𝐝 𝐚𝐭 ${chalk.blueBright('Mahabub.json')}`);
     process.exit(0);
   }
-  if (packages.author != "CYBER") {
-    logger.error(`detected : author was changed at ${chalk.blueBright('package.json')}`);
+  if (packages.author != "𝐌𝐚𝐡𝐚𝐛𝐮𝐛 𝐑𝐚𝐡𝐦𝐚𝐧") {
+    logger.error(`⚠️ 𝐃𝐞𝐭𝐞𝐜𝐭𝐞𝐝 : 𝐚𝐮𝐭𝐡𝐨𝐫 𝐧𝐚𝐦𝐞 𝐰𝐚𝐬 𝐜𝐡𝐚𝐧𝐠𝐞𝐝 𝐚𝐭 ${chalk.blueBright('package.json')}`);
     process.exit(0);
   }
-  if (packages.name != "CYBER") {
-    logger.error(`detected : project name was changed at ${chalk.blueBright('package.json')}`);
+  if (packages.name != "𝐌𝐇_𝐁𝐎𝐓") {
+    logger.error(`⚠️ 𝐃𝐞𝐭𝐞𝐜𝐭𝐞𝐝 : 𝐩𝐫𝐨𝐣𝐞𝐜𝐭 𝐧𝐚𝐦𝐞 𝐰𝐚𝐬 𝐜𝐡𝐚𝐧𝐠𝐞𝐝 𝐚𝐭 ${chalk.blueBright('package.json')}`);
     process.exit(0);
   }
 } catch (error) {
@@ -233,11 +233,11 @@ try {
 }
 
 try {
-  var appStateFile = resolve(join(global.client.mainPath, "../../Cyberstate.json"));
+  var appStateFile = resolve(join(global.client.mainPath, "../../Mahabubstate.json"));
   var appState = ((process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER) && (fs.readFileSync(appStateFile, 'utf8'))[0] != "[" && ryuko.encryptSt) ? JSON.parse(global.utils.decryptState(fs.readFileSync(appStateFile, 'utf8'), (process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER))) : require(appStateFile);
-  logger.loader(`deployed ${chalk.blueBright('Cyberstate')} file`)
+  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝 ${chalk.blueBright('Mahabubstate')} 𝐟𝐢𝐥𝐞`)
 } catch (e) {
-  return logger.error(`can't read ${chalk.blueBright('Cyberstate')} file`)
+  return logger.error(`𝐜𝐚𝐧'𝐭 𝐫𝐞𝐚𝐝 ${chalk.blueBright('Mahabubstate')} 𝐟𝐢𝐥𝐞`)
 }
 
 function onBot({ models: botModel }) {
