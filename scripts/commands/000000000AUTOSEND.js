@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "ajan",
+  name: "autosend860175",
   version: "2.0",
   Permssion: 0,
   credits: "Islamick Cyber Chat",
