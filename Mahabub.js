@@ -1,5 +1,5 @@
  module.exports = async ({ api, event }) => {
-  const logger = require('./CYBER/catalogs/cyberc.js')
+  const logger = require('./CYBER/catalogs/Mahabubc.js')
   
   const configCustom = {
     autosetbio: {
