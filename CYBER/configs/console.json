@@ -6,9 +6,9 @@
     "warn": "yellow",
     "available": "blue, red, yellow, white, green, blueBright",
     "editNames": {
-      "success": "CYBER RUNNING",
-      "error":   "CYBER ERROR",
-      "warn":    "CYBER WARNING"
+      "success": "𝐂𝐘𝐁𝐄𝐑 𝐑𝐔𝐍𝐍𝐈𝐍𝐆",
+      "error":   "𝐂𝐘𝐁𝐄𝐑 𝐄𝐑𝐑𝐎𝐑",
+      "warn":    "𝐂𝐘𝐁𝐄𝐑 𝐖𝐀𝐑𝐍𝐈𝐍𝐆"
     }
   },
   "logger": {
@@ -19,10 +19,10 @@
       "evntLoader": "blue"
     },
     "strings": {
-      "cmdStarter": "CYBER INPORTING COMMANDS",
-      "evntStarter": "CYBER INPORTING EVENTS",
-      "cmdLoader": "CYBER COMMAND",
-      "evntLoader": "CYBER EVENT"
+      "cmdStarter": "𝐂𝐘𝐁𝐄𝐑 𝐈𝐌𝐏𝐎𝐑𝐓𝐈𝐍𝐆 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒",
+      "evntStarter": "𝐂𝐘𝐁𝐄𝐑 𝐈𝐌𝐏𝐎𝐑𝐓𝐈𝐍𝐆 𝐄𝐕𝐄𝐍𝐓𝐒",
+      "cmdLoader": "𝐂𝐘𝐁𝐄𝐑 𝐂𝐎𝐌𝐌𝐀𝐍𝐃",
+      "evntLoader": "𝐂𝐘𝐁𝐄𝐑 𝐄𝐕𝐄𝐍𝐓"
     }
   }
 }
