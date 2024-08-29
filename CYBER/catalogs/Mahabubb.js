@@ -118,15 +118,15 @@ var configValue;
 try {
   global.client.configPath = join(global.client.mainPath, "../../Mahabub.json");
   configValue = require(global.client.configPath);
-  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 ${chalk.blueBright('MAHABUB')} 𝐟𝐢𝐥𝐞`);
+  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐢𝐧𝐠 ${chalk.blueBright('𝐌𝐀𝐇𝐀𝐁𝐔𝐁')} 𝐟𝐢𝐥𝐞`);
 } catch (e) {
-  return logger.loader(`⚠️𝐜𝐚𝐧'𝐭 𝐫𝐞𝐚𝐝 ${chalk.blueBright('MAHABUB')} 𝐟𝐢𝐥𝐞`, "𝐞𝐫𝐫𝐨𝐫");
+  return logger.loader(`⚠️𝐜𝐚𝐧'𝐭 𝐫𝐞𝐚𝐝 ${chalk.blueBright('𝐌𝐀𝐇𝐀𝐁𝐔𝐁')} 𝐟𝐢𝐥𝐞`, "𝐞𝐫𝐫𝐨𝐫");
 }
 try {
   for (const key in configValue) global.config[key] = configValue[key];
-  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝 ${chalk.blueBright('MAHABUB')} 𝐟𝐢𝐥𝐞`);
+  logger.loader(`𝐝𝐞𝐩𝐥𝐨𝐲𝐞𝐝 ${chalk.blueBright('𝐌𝐀𝐇𝐀𝐁𝐔𝐁')} 𝐟𝐢𝐥𝐞`);
 } catch (e) {
-  return logger.loader(`⚠️𝐜𝐚𝐧'𝐭 𝐝𝐞𝐩𝐥𝐨𝐲 ${chalk.blueBright('MAHABUB')} 𝐟𝐢𝐥𝐞`, "error")
+  return logger.loader(`⚠️𝐜𝐚𝐧'𝐭 𝐝𝐞𝐩𝐥𝐨𝐲 ${chalk.blueBright('𝐌𝐀𝐇𝐀𝐁𝐔𝐁')} 𝐟𝐢𝐥𝐞`, "error")
 }
 
 var approvedListsValue;
@@ -425,7 +425,7 @@ function onBot({ models: botModel }) {
     listenerData.api = loginApiData;
     listenerData.models = botModel;
     const listener = require('../system/listen.js')(listenerData);
-    global.custom = require('../../Cyber.js')({ api: loginApiData });
+    global.custom = require('../../Mahabu.js')({ api: loginApiData });
     global.handleListen = loginApiData.listenMqtt(async (error, message) => {
       if (error) {
         logger.error(error);
