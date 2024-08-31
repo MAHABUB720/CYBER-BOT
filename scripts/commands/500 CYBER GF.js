@@ -26,7 +26,7 @@ module.exports.config = {
   version: "1.0.0",
   permssion: 0,
   credits: "mahabub",
-  prefix :true,
+  prefix :false,
   description: "auto reply to gf",
   category: "noprefix",
   usages: "gf",
