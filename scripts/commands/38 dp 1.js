@@ -21,9 +21,9 @@ module.exports.onLoad = async() => {
   const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
   const { downloadFile } = global.utils;
   const dirMaterial = __dirname + `/cache/canvas/`;
-  const path = resolve(__dirname, 'cache/canvas', 'Messenger_creation_26584877514459948.jpeg');
+  const path = resolve(__dirname, 'cache/canvas', 'IMG_1725118402109.jpg');
   if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-  if (!existsSync(path)) await downloadFile("https://i.imgur.com/SgEubCM.jpeg", path); 
+  if (!existsSync(path)) await downloadFile("https://i.imgur.com/m9IM4Gi.jpeg", path); 
 }
 
 async function makeImage({ one, two }) {
@@ -33,7 +33,7 @@ async function makeImage({ one, two }) {
   const jimp = global.nodemodule["jimp"];
   const __root = path.resolve(__dirname, "cache", "canvas");
 
-  let batgiam_img = await jimp.read(__root + "/Messenger_creation_26584877514459948.jpeg");
+  let batgiam_img = await jimp.read(__root + "/IMG_1725118402109.jpg");
   let pathImg = __root + `/batman${one}_${two}.png`;
   let avatarOne = __root + `/avt_${one}.png`;
   let avatarTwo = __root + `/avt_${two}.png`;
@@ -70,6 +70,6 @@ module.exports.run = async function ({ event, api, args }) {
   if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
   else {
       const one = senderID, two = mention[0];
-      return makeImage({ one, two }).then(path => api.sendMessage({ body: "__)🍒_🐼🦋🌈\n\nআপনি আমার উপর আসক্ত হয়ে দেখুন 😊🦋${name}\n\n❤︎______আমি আপনার ওপর কখন ও বিরক্ত হবো না 😊✨❤️", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+      return makeImage({ one, two }).then(path => api.sendMessage({ body: "__)🍒_🐼🦋🌈\n\nআপনি আমার উপর আসক্ত হয়ে দেখুন 😊🦋${tag}\n\n❤︎______আমি আপনার ওপর কখন ও বিরক্ত হবো না 😊✨❤️", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
   }
     }
