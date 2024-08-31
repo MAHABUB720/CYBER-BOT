@@ -1,6 +1,5 @@
-module.exports = {
-  config: {
-    name: "ephoto",
+module.exports.config = {   
+   name: "ephoto",
     version: "2.0.0",
     permission: 0,
     credits: "Nayan",
@@ -10,7 +9,7 @@ module.exports = {
     usages: "text",
     cooldowns: 5,
     dependencies: {
-      'nayan-server': ''
+      'nayan-server':''
     }
   },
 
@@ -92,13 +91,14 @@ module.exports = {
       file.on('finish', () => {
         setTimeout(function () {
           return nayan.reply({
-            body: `❐ THIS IS YOUR NAME EDIT ✌️\n\n___________________________________\n\n❐ This Bot Name : ${global.config.BOTNAME} 🤖\n❐ This Bot Owner : FARHAN_ISLAM\n❐ Your Input Name : ${name}\n\n___________________________________`,
+            body: `❐ THIS IS YOUR NAME EDIT ✌️\n\n___________________________________\n\n❐ This Bot Name : ${global.config.BOTNAME} 🤖\n❐ This Bot Owner : Mahabub Rahman\n❐ Your Input Name : ${name}\n\n___________________________________`,
             attachment: fs.createReadStream(__dirname + '/cache/ephoto.jpg')
           }, threadID, messageID)
         }, 5000)
       })
     } catch (err) {
       NAYAN.react("❌")
-      nayan.reply(`🔰Use ${global.config.PREFIX}${this.config.name} [no.] [text]\n🔰Example:${global.config.PREFIX}${this.config.name} 1 nayan\n\n🔥Total Edit limit 10...`, events.threadID, events.messageID);
+      nayan.reply(`🔰Use ${global.config.PREFIX}${this.config.name} [no.] [text]\n🔰Example:${global.config.PREFIX}${this.config.name} 1 Mahabub\n\n🔥Total Edit limit 50...`, events.threadID, events.messageID);
     }
   }
+      }
