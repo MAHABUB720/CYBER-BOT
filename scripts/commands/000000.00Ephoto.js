@@ -1,18 +1,18 @@
-module.exports.config = {   
-   name: "ephoto",
-    version: "2.0.0",
-    permission: 0,
-    credits: "Nayan",
-    description: "",
-    prefix: true,
-    category: "user",
-    usages: "text",
-    cooldowns: 5,
-    dependencies: {
-      'nayan-server':''
-    }
-  },
-
+module.exports.config = {
+  name: "ephoto",
+  version: "2.0.0",
+  permission: 2,
+  credits: "Nayan",
+  description: "",
+  prefix: true,
+  category: "user",
+  usages: "text",
+  cooldowns: 5,
+  dependencies: {
+        'image-downloader': '',
+    'nayan-server': ''
+  }
+};
   start: async function ({ nayan, events, args, NAYAN }) {
     if (!NAYAN) {
       return nayan.reply(`[❌] Unsupported this file your bot`, events.threadID);
