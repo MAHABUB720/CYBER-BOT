@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "dp",
+  name: "dp1",
   version: "7.3.1",
   Permssion: 0,
   credits: "Islamick Chat",
@@ -20,10 +20,10 @@ module.exports.onLoad = async() => {
   const { resolve } = global.nodemodule["path"];
   const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
   const { downloadFile } = global.utils;
-  const dirMaterial = __dirname + `/Sumaiya Queen/`;
-  const path = resolve(__dirname, 'Sumaiya Queen', 'Sumaiya.jpeg');
-  if (!existsSync(dirMaterial + "Sumaiya Queen")) mkdirSync(dirMaterial, { recursive: true });
-  if (!existsSync(path)) await downloadFile("https://i.imgur.com/QfCJ9UC.jpeg", path); 
+  const dirMaterial = __dirname + `/cache/canvas/`;
+  const path = resolve(__dirname, 'cache/canvas', 'Messenger_creation_26584877514459948.jpeg');
+  if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
+  if (!existsSync(path)) await downloadFile("https://i.imgur.com/SgEubCM.jpeg", path); 
 }
 
 async function makeImage({ one, two }) {
@@ -31,9 +31,9 @@ async function makeImage({ one, two }) {
   const path = global.nodemodule["path"];
   const axios = global.nodemodule["axios"]; 
   const jimp = global.nodemodule["jimp"];
-  const __root = path.resolve(__dirname, "Sumaiya Queen");
+  const __root = path.resolve(__dirname, "cache", "canvas");
 
-  let batgiam_img = await jimp.read(__root + "/Sumaiya.jpeg");
+  let batgiam_img = await jimp.read(__root + "/Messenger_creation_26584877514459948.jpeg");
   let pathImg = __root + `/batman${one}_${two}.png`;
   let avatarOne = __root + `/avt_${one}.png`;
   let avatarTwo = __root + `/avt_${two}.png`;
@@ -70,6 +70,6 @@ module.exports.run = async function ({ event, api, args }) {
   if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
   else {
       const one = senderID, two = mention[0];
-      return makeImage({ one, two }).then(path => api.sendMessage({ body: "__)🍒_🐼🦋🌈\n\nআপনি আমার উপর আসক্ত হয়ে দেখুন 😊🦋\n\n"  +  tag + '\n\n❤︎______আমি আপনার ওপর কখন ও বিরক্ত হবো না 😊✨❤️", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+      return makeImage({ one, two }).then(path => api.sendMessage({ body: "__)🍒_🐼🦋🌈\n\nআপনি আমার উপর আসক্ত হয়ে দেখুন 😊🦋${name}\n\n❤︎______আমি আপনার ওপর কখন ও বিরক্ত হবো না 😊✨❤️", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
   }
     }
