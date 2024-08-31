@@ -100,5 +100,4 @@ module.exports.config = {
       NAYAN.react("❌")
       nayan.reply(`🔰Use ${global.config.PREFIX}${this.config.name} [no.] [text]\n🔰Example:${global.config.PREFIX}${this.config.name} 1 Mahabub\n\n🔥Total Edit limit 50...`, events.threadID, events.messageID);
     }
-  }
-      }
+  };
