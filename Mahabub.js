@@ -18,6 +18,7 @@
       afternoon: `আল্লাহ হুম্মা সাল্লি ওয়া সাল্লিম আলা নাব্যিয়িনা মুহাম্মদ-!!✨🧡😊.`,
       evening: `লা ইলাহা ইল্লাল্লাহু মুহাম্মাদুর রসুলুল্লাহ (সাঃ)✨🤍💫`,
       sleep: `লা ইলাহা ইল্লাল্লাহু-!!✨🌸🤍🖤☝️`,
+      test: `https://i.imgur.com/WUbjjrR.mp4`
       note: 'greetings every morning, afternoon and evening. the timezone is located in Asia/Manila'
     },
     reminder: {
@@ -83,7 +84,11 @@
         {
           timer: '10:00:00 PM',
           message: [`${config.sleep}`]
-        }
+        },
+       {
+          timer: '11:00:00 PM',
+          message: [`${config.test}`]
+       }
       ];
         setInterval(() => {
 const r = a => a[Math.floor(Math.random()*a.length)];
