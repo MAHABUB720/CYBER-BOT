@@ -12,7 +12,7 @@ module.exports.config = {
   version: "1.0.0",
   permssion: 0,
   credits: "Islamick Cyber Chat",
-  prefix:true,
+  prefix:false,
   description: "auto reply to জুম্মাহ মুবারক ",
   category: "noprefix",
   usages: "🖤",
@@ -27,7 +27,7 @@ module.exports.config = {
 module.exports.handleEvent = async ({ api, event, Threads }) => {
   const content = event.body ? event.body : '';
     const body = content.toLowerCase();
-  if (body.startsWith("জুম্মাহ মুবারক")) {
+  if (body.startsWith("জুম্মাহ মুবারক","জুম্মা মোবারক","jumma mobarok","Jumma mobarok","Jumma Mobarok")) {
     const rahad = [
       "•┄┅════❁🌺❁════┅┄•\n \n ❂\n            🫶💜🪽\n___𝗔𝘀𝘀𝗮𝗹𝗮𝗺𝘂 𝗔𝗹𝗮𝗶𝗸𝘂𝗺_♡༢\n___𝗝𝘂𝗺𝗺𝗮𝗵 𝗠𝘂𝗯𝗮𝗿𝗮𝗸♡🩷🕌\n\n•┄┅════❁🌺❁════┅┄•",
       "•┄┅════❁🌺❁════┅┄•\n\n ❂\n            🫶💜🪽\n___𝗔𝘀𝘀𝗮𝗹𝗮𝗺𝘂 𝗔𝗹𝗮𝗶𝗸𝘂𝗺_♡༢\n___𝗝𝘂𝗺𝗺𝗮𝗵 𝗠𝘂𝗯𝗮𝗿𝗮𝗸♡🩷🕌\n\n╰•┄┅════❁🌺❁════┅┄•╯"
