@@ -44,6 +44,7 @@
         "moment": "^2.29.1",
         "moment-timezone": "^0.5.41",
         "mqtt": "latest",
+        "mahabub-dlmedia":"^1.0.5",
         "nayan-media-downloader": "^2.4.8",
         "nayan-server": "^2.4.2",
         "node-cron": "^3.0.2",
