@@ -113,4 +113,5 @@ module.exports.run = async function ({ api, event, args }) {
             return api.sendMessage('Erorr 🗡 please try Music !\n' + e, event.threadID, event.messageID);
         }
     }
+}
                              
