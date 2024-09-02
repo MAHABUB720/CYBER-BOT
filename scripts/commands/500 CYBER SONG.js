@@ -1,5 +1,16 @@
 // Fix by Mohammad Nayan. Dont Change Credit
 
+module.exports.config = {
+    name: "song",
+    version: "1.0.0",
+    permssion: 0,
+    credits: "D-Jukie",
+    description: "Phát nhạc thông qua link YouTube hoặc từ khoá tìm kiếm",
+    prefix: true,
+    category: "tiện ích",
+    usages: "[searchMusic]",
+    cooldowns: 0,
+};
 
 const fs = require('fs');
 const ytdl = require('ytdl-core');
@@ -52,19 +63,6 @@ async function downloadMusicFromYoutube(link, path) {
     return Promise.reject(error);
   }
 }
-
-
-module.exports.config = {
-    name: "song",
-    version: "1.0.0",
-    permssion: 0,
-    credits: "D-Jukie",
-    description: "Phát nhạc thông qua link YouTube hoặc từ khoá tìm kiếm",
-    prefix: true,
-    category: "tiện ích",
-    usages: "[searchMusic]",
-    cooldowns: 0,
-};
 
 handleReply: async function ({ api, event, handleReply }) {
     const axios = require('axios')
