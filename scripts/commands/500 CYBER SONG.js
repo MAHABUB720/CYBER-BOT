@@ -150,11 +150,3 @@ module.exports.config = {
         return e.sendMessage("The request could not be processed due to an error: " + t.message, a.threadID, a.messageID)
     }
 };
-Sponsors
-Secure stores, happy shoppers. We are Sansec.
-
-Credits
-Project maintained by lelinhtinh
-Hosted on GitHub Pages
-
-Icons made by Eucalyp
