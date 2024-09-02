@@ -2,8 +2,8 @@ module.exports.config = {
  name: "antiout",
  eventType: ["log:unsubscribe"],
  version: "0.0.1",
- credits: "DungUwU",
- description: "Listen events Notify bot or group member with random gif/photo/video"
+ credits: "Nayan",
+ description: "Listen events"
 };
 
 module.exports.run = async({ event, api, Threads, Users }) => {
@@ -11,14 +11,12 @@ module.exports.run = async({ event, api, Threads, Users }) => {
  if (data.antiout == false) return;
  if (event.logMessageData.leftParticipantFbId == api.getCurrentUserID()) return;
  const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
- const type = (event.author == event.logMessageData.leftParticipantFbId) ? "self-separation" : "being kicked by the administrator";
+ const type = (event.author == event.logMessageData.leftParticipantFbId) ? "self-separation" : "being kicked by the administrator na pasikat";
  if (type == "self-separation") {
   api.addUserToGroup(event.logMessageData.leftParticipantFbId, event.threadID, (error, info) => {
    if (error) {
-    api.sendMessage(`সরি বস ${name} ব্লক করছে তাই এড করতে পারলাম না😞😞  \n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝗠𝗔𝗛𝗔𝗕𝗨𝗕 -----❖----:( `, event.threadID)
-   } else api.sendMessage(` BoSS, ${name} লিভ নেওয়া আইডি টা পুনরায় এড করতে সফল্য! \n✢━━━━━━━━━━━━━━━✢\n ----❖----- 𝗠𝗔𝗛𝗔𝗕𝗨𝗕 -----❖----`,
-
- event.threadID);
+    api.sendMessage(`Unable to re-add ${name} to the group. `, event.threadID)
+   } else api.sendMessage(`${name} Has been re added to the group.`, event.threadID);
   })
  }
-                     }
+}
