@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "join",
+  name: "join1",
   eventType: ['log:subscribe'],
   version: "1.0.0",
   credits: "Mirai-Team", // FIXED BY YAN Nayan
@@ -29,13 +29,13 @@ module.exports.run = async function({ api, event, Users }) {
   var session = `${getHours < 3 ? "midnight" : getHours < 8 ? "Early morning" : getHours < 12 ? "noon" : getHours < 17 ? "afternoon" : getHours < 23 ? "evening" : "midnight"}`
   const moment = require("moment-timezone");
   var thu = moment.tz('Asia/dhaka').format('dddd');
-  if (thu == 'Sunday') thu = 'Sunday'
-  if (thu == 'Monday') thu = 'Monday'
-  if (thu == 'Tuesday') thu = 'Tuesday'
-  if (thu == 'Wednesday') thu = 'Wednesday'
-  if (thu == "Thursday") thu = 'Thursday'
-  if (thu == 'Friday') thu = 'Friday'
-  if (thu == 'Saturday') thu = 'Saturday'
+  if (thu == 'Sunday') thu = 'রবিবার'
+  if (thu == 'Monday') thu = 'সোমবার'
+  if (thu == 'Tuesday') thu = 'মঙ্গগলবার'
+  if (thu == 'Wednesday') thu = 'বুধবার'
+  if (thu == "Thursday") thu = 'বৃহস্পতিবার'
+  if (thu == 'Friday') thu = 'শুক্রবার'
+  if (thu == 'Saturday') thu = 'শনিবার'
   const time = moment.tz("Asia/dhaka").format("HH:mm:ss - DD/MM/YYYY");
   const hours = moment.tz("Asia/dhaka").format("HH");
   const { commands } = global.client;
@@ -54,20 +54,17 @@ let gifPath = __dirname + '/Nayan/join/join.gif';
 axios.get(gifUrl, { responseType: 'arraybuffer' })
 .then(response => {
     fs.writeFileSync(gifPath, response.data);
-    return api.sendMessage("চলে এসেছি আমি পিচ্চি তোমাদের মাঝে🤭!", event.threadID, () => api.sendMessage({ body: `${global.config.BOTNAME} CONNECTED«\n\nAssalamualaykum☘️
-<------------------------------>  
-BOT CONNECTED SUCCESFUL !!!
+    return api.sendMessage("${global.config.BOTNAME} connected successful.", event.threadID, () => api.sendMessage({ body: `╭•┄┅═══❁🌺❁═══┅┄•╮\n   আসসালামু আলাইকুম-!!🖤💫\n╰•┄┅═══❁🌺❁═══┅┄•╯
 
-adding in the group chat successfully!!!
-😈 কিরে বাঁদর গুলা শয়তানি করার জন্য অ্যাড দিছস 😈
-____________________________________\n\nযেকোনো কমান্ড দেখতে ${global.config.PREFIX}help ব্যবহার করুন
-\n\উদাহারণ:\n${global.config.PREFIX}mark (text)\n${global.config.PREFIX}lexi (text)\n${global.config.PREFIX}trump (text)\n${global.config.PREFIX}info
-____________________________________
-যেকোনো অভিযোগ অথবা হেল্প এর জন্য আমার BOSS 
-মাহাবুব_কে নক করতে পারেন 
-👉FB link: https://www.facebook.com/www.xnxx.com140
--
-`, attachment: fs.createReadStream(__dirname + "/Nayan/join/received_1720122795185792.mp4")}, threadID));
+________________________
+𝐓𝐡𝐚𝐧𝐤 𝐲𝐨𝐮 𝐬𝐨 𝐦𝐮𝐜𝐡 𝐟𝐨𝐫 𝐚dd𝐢𝐧𝐠 𝐦𝐞 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐢-𝐠𝐫𝐨𝐮𝐩-🖤🤗\n\n𝐈 𝐰𝐢𝐥𝐥 𝐚𝐥𝐰𝐚𝐲𝐬 𝐬𝐞𝐫𝐯𝐞 𝐲𝐨𝐮 𝐢𝐧𝐚𝐡𝐚𝐥𝐥𝐚𝐡 🌺❤️-!!
+________________________\n\n𝐓𝐨 𝐯𝐢𝐞𝐰 𝐚𝐧𝐲 𝐜𝐨𝐦𝐦𝐚𝐧d
+
+${global.config.PREFIX}Help\n${global.config.PREFIX} Manu
+
+𝐁𝐎𝐓 𝐍𝐀𝐌𝐄 : ${global.config.BOTNAME}
+𝐁𝐎𝐓 𝐀𝐃𝐌𝐈𝐍 : 𝗠𝗮𝗵𝗮𝗯𝘂𝗯 𝗥𝗮𝗵𝗺𝗮𝗻
+\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`, attachment: fs.createReadStream(__dirname + "/Nayan/join/received_1720122795185792.mp4")}, threadID));
 })
 .catch(error => {
     console.error(error);
@@ -156,7 +153,7 @@ ____________________________________
         abx.push(fs.createReadStream(__dirname + `/Nayan/join/${o}.png`))
       }
       memLength.sort((a, b) => a - b);
-      (typeof threadData.customJoin == "undefined") ? msg = `আসসালামু আলাইকুম🌺 🥀༊🤗😻🤗 {name}  😍.\n\n🌸༊🥀۞Wellcome-!!-🌻🥀 To {threadName}\n{type} You are the {soThanhVien} member of this group🌻.\n\n𝄞❤️⋆⃝⑅⑅⃝•BOT OWNER♥🖤 Mahabub Rahaman ❤️😇Never Try To Spam Here🚫\n\n 『Mahabur Rahaman♥』\n\n🥰 Follow Our Group Rules✅\n\n🤖 Hi I'm  messenger bot use '/help' to see command 🤖."\n─────────────────\n[ {time} - {thu} ]` : msg = threadData.customJoin;
+      (typeof threadData.customJoin == "undefined") ? msg = `╭•┄┅═══❁🌺❁═══┅┄•╮\n   আসসালামু আলাইকুম-!!🖤\n╰•┄┅═══❁🌺❁═══┅┄•╯ \n\n    ✨🆆🅴🅻🅻 🅲🅾🅼🅴✨\n\n                ❥𝐍𝐄𝐖~\n\n        ~🇲‌🇪‌🇲‌🇧‌🇪‌🇷‌~\n\n        [   {name} ]\n\n༆-✿ আপনাকে আমাদের࿐\n\n{threadName}\n\n🌺✨!!—এর পক্ষ-থেকে-!!✨🌺\n\n❤️🫰_ভালোবাস_অভিরাম_🫰❤️\n\n༆-✿আপনি_এই_গ্রুপের {soThanhVien} নং মেম্বার࿐\n\n╭•┄┅═══❁🌺❁═══┅┄•╮\n  🌸   𝙸𝙼 ${global.config.BOTNAME}  🌸\n╰•┄┅═══❁🌺❁═══┅┄•╯"\n─────────────────\n[ {time} - {thu} ]` : msg = threadData.customJoin;
       var nameAuthor = await Users.getNameUser(event.author)
       msg = msg
         .replace(/\{iduser}/g, iduser.join(', '))
