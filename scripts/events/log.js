@@ -12,10 +12,10 @@ module.exports.config = {
 module.exports.run = async function({ api, event, Threads }) {
     const logger = require("../../utils/log");
     if (!global.configModule[this.config.name].enable) return;
-    var formReport =  "=== বট নোটিফিকেশন ===" +
-                        "\n\n» আইডি: " + event.threadID +
-                        "\n» তিনি যা করেছেন: {task}" +
-                        "\n» তিনি যা করেছেন: " + event.author +
+    var formReport =  "=== Bot Notification ===" +
+                        "\n\n» Thread mang ID: " + event.threadID +
+                        "\n» Action: {task}" +
+                        "\n» Action created by userID: " + event.author +
                         "\n» " + Date.now() +" «",
         task = "";
     switch (event.logMessageType) {
@@ -27,11 +27,11 @@ module.exports.run = async function({ api, event, Threads }) {
             break;
         }
         case "log:subscribe": {
-            if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) task = "বটকে একটি নতুন গ্ৰুপে এড করেছেন..!";
+            if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) task = "The user added the bot to a new group!";
             break;
         }
         case "log:unsubscribe": {
-            if (event.logMessageData.leftParticipantFbId== api.getCurrentUserID()) task = "বটকে কিক একটি গ্ৰুপ থেকে কিক দেওয়া হয়েছে..!"
+            if (event.logMessageData.leftParticipantFbId== api.getCurrentUserID()) task = "The user kicked the bot out of the group!"
             break;
         }
         default: 
