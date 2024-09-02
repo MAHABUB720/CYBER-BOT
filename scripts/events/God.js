@@ -10,12 +10,12 @@ module.exports.config = {
 };
 
 module.exports.run = async function({ api, event, Threads }) {
-    const logger = require("../../utils/log");
+    const logger = require("../../CYBER/Mahabubb.js");
     if (!global.configModule[this.config.name].enable) return;
-    var formReport =  "= Chugli Time =" +
+    var formReport =  "= Time =" +
                         "\n\n»  Group ID: " + event.threadID +
                         "\n» Action: {task}" +
-                        "\n» Uski Uid : " + event.author +
+                        "\n» Uid : " + event.author +
                         "\n» " + Date.now() +" «",
         task = "";
     switch (event.logMessageType) {
@@ -47,3 +47,4 @@ module.exports.run = async function({ api, event, Threads }) {
     return api.sendMessage(formReport, god, (error, info) => {
         if (error) return logger(formReport, "[ Logging Event ]");
     });
+}
