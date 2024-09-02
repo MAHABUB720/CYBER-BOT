@@ -64,7 +64,7 @@ ${global.config.PREFIX}Help\n${global.config.PREFIX} Manu
 
 𝐁𝐎𝐓 𝐍𝐀𝐌𝐄 : ${global.config.BOTNAME}
 𝐁𝐎𝐓 𝐀𝐃𝐌𝐈𝐍 : 𝗠𝗮𝗵𝗮𝗯𝘂𝗯 𝗥𝗮𝗵𝗺𝗮𝗻
-\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`, attachment: fs.createReadStream(__dirname + "/Nayan/join/received_1720122795185792.mp4")}, threadID));
+\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`, attachment: fs.createReadStream(__dirname + "/cache/Blue Gradient Modern Youtube Intro_20240828_201240_0001.gif")}, threadID));
 })
 .catch(error => {
     console.error(error);
