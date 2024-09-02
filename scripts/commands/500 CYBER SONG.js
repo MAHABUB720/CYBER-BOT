@@ -67,13 +67,6 @@ module.exports = {
   category: "Media", 
   usages: "user", 
   cooldowns: 5,
-  dependencies: {
-    "axios":"",
-    "fs":"",
-    "nayan-media-downloader":"",
-	  "ytdl-core":"",
-    "simple-youtube-api":""
-	}
 },
 
 handleReply: async function ({ api, event, handleReply }) {
