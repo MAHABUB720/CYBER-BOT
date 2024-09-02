@@ -63,8 +63,8 @@ module.exports.config = {
     prefix: true,
     category: "tiện ích",
     usages: "[searchMusic]",
-    cooldowns: 0
-},
+    cooldowns: 0,
+};
 
 handleReply: async function ({ api, event, handleReply }) {
     const axios = require('axios')
