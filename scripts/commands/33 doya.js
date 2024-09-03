@@ -8,12 +8,7 @@
   category: "doya",
   usages: "doya",
   cooldowns: 5,
-  dependencies: {
-    "axios": "",
-    "fs-extra": "",
-    "request": ""
-  } 
-}
+},
 
 module.exports.onLoad = () => {
   let { mkdirSync, existsSync, createWriteStream } = require("fs-extra");
