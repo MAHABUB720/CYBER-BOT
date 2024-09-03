@@ -1,5 +1,4 @@
-import fs from 'fs';
-export const setup = {
+module.exports.config = {
     name: "test",
     version: "40.0.0",
     permission: "Users",
